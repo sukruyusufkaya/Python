@@ -20,8 +20,7 @@ def actual_time():
     alarm(set_alarm_timer)
 
 clock = Tk()
-clock.title("Alarm Clock"
-            "")
+clock.title("Alarm Clock by Sukru Yusuf KAYA")
 clock.geometry("400x200")
 time_format=Label(clock, text= "Enter time in 24 hour format!", fg="red",bg="black",font="Arial").place(x=60,y=120)
 addTime = Label(clock,text = "Hour  Min   Sec",font=60).place(x = 110)
