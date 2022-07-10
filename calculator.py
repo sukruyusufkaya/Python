@@ -5,7 +5,7 @@ class Calculator:
         self.window = tk.Tk()
         self.window.geometry("370x660")
         self.window.resizable(0, 0)
-        self.window.title("ProjectGurukul Calculator")
+        self.window.title("Calculator")
 
         self.total_expression = ""
         self.current_expression = ""
