@@ -1,8 +1,6 @@
-#importing neccessary documents
 import tkinter as tk
 
 class Calculator:
-    #function to create calculator window 
     def __init__(self):
         self.window = tk.Tk()
         self.window.geometry("370x660")
@@ -68,7 +66,6 @@ class Calculator:
         self.current_expression += str(value)
         self.update_label()
 
-    #creating digit buttons
     def digit_buttons(self):
         for digit, grid_value in self.digits.items():
             button = tk.Button(self.buttons_frame, text=str(digit), bg="#FFFFFF", fg="#25265E", font=("Arial", 24, "bold"),
@@ -90,42 +87,35 @@ class Calculator:
             button.grid(row=i, column=4, sticky=tk.NSEW)
             i += 1
 
-    #clear operation
     def clear(self):
         self.current_expression = ""
         self.total_expression = ""
         self.update_label()
         self.update_total_label()
 
-    #creating clear button
     def clear_button(self):
         button = tk.Button(self.buttons_frame, text="C", bg="#F8FAFF", fg="#25265E", font=("Arial", 20),
                            borderwidth=0, command=self.clear)
         button.grid(row=0, column=1, sticky=tk.NSEW)
 
-    #square operation
     def square(self):
         self.current_expression = str(eval(f"{self.current_expression}**2"))
         self.update_label()
 
-    #creating square button
     def square_button(self):
         button = tk.Button(self.buttons_frame, text="x\u00b2", bg="#F8FAFF", fg="#25265E", font=("Arial", 20),
                            borderwidth=0, command=self.square)
         button.grid(row=0, column=2, sticky=tk.NSEW)
 
-    #sqaure root operation
     def sqrt(self):
         self.current_expression = str(eval(f"{self.current_expression}**0.5"))
         self.update_label()
 
-    #creating square root button
     def sqrt_button(self):
         button = tk.Button(self.buttons_frame, text="\u221ax", bg="#F8FAFF", fg="#25265E", font=("Arial", 20),
                            borderwidth=0, command=self.sqrt)
         button.grid(row=0, column=3, sticky=tk.NSEW)
 
-    #equal to evaluation
     def evaluate(self):
         self.total_expression += self.current_expression
         self.update_total_label()
@@ -138,13 +128,11 @@ class Calculator:
         finally:
             self.update_label()
 
-    #creating equal to button
     def equals_button(self):
         button = tk.Button(self.buttons_frame, text="=", bg="#CCEDFF", fg="#25265E", font=("Arial", 20),
                            borderwidth=0, command=self.evaluate)
         button.grid(row=4, column=3, columnspan=2, sticky=tk.NSEW)
 
-    #creating frame for buttons
     def create_buttons_frame(self):
         frame = tk.Frame(self.window)
         frame.pack(expand=True, fill="both")
@@ -164,5 +152,5 @@ class Calculator:
 
 
 if __name__ == "__main__":
-    calc = Calculator() # calc is the object
-    calc.run() # calling function to run
+    calc = Calculator() 
+    calc.run() 
